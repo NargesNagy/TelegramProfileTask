@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/profile_image_ifv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="248dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person"
+            app:layout_constraintEnd_toEndOf="@id/image_container"
+            app:layout_constraintStart_toEndOf="@+id/back_arrow_iv"
+            app:layout_constraintTop_toTopOf="@id/image_container"
+            app:layout_constraintBottom_toBottomOf="@id/image_container"
+            app:roundPercent="1.0">
+            <CustomAttribute
+                app:attributeName="roundPercent"
+                app:customFloatValue="1.0" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/image_container"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/nested_scrollView"/>
+
+        <Constraint
+            android:id="@+id/profile_image_ifv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person"
+            app:layout_constraintEnd_toEndOf="@id/image_container"
+            app:layout_constraintStart_toEndOf="@id/image_container"
+            app:layout_constraintTop_toTopOf="@id/image_container"
+            app:layout_constraintBottom_toBottomOf="@id/image_container"
+            app:roundPercent="0">
+            <CustomAttribute
+                app:attributeName="roundPercent"
+                app:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="276dp"
+            android:text="Narges Nagy"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="online"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+        <Constraint
+            android:id="@+id/qr_imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/qr_code_24"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/name_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/search_imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_search_24"
+            app:layout_constraintEnd_toStartOf="@id/more_imv"
+            app:layout_constraintTop_toTopOf="@+id/back_arrow_iv"
+            android:layout_marginEnd="16dp" />
+
+        <Constraint
+            android:id="@+id/more_imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/more_vert_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_imv" />
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000">
+        <OnSwipe app:touchAnchorId="@+id/nested_scrollView"
+            app:dragDirection="dragUp"/>
+
+    </Transition>
+</MotionScene>

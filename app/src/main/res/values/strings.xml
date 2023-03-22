@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TelegramProfileTask</string>
+    <string name="username_value_tv">\@Narges Nagy</string>
+    <string name="user_name">user name</string>
+    <string name="brief">brief</string>
+    <string name="add_brief_tv">Add brief About youy</string>
+    <string name="settings_tv">Settings</string>
+    <string name="notification_and_sounds_tv">Notification and Sounds</string>
+    <string name="privacy_and_security_tv">Privacy and Security</string>
+    <string name="data_and_storage_tv">Data and Storage</string>
+    <string name="battary_server_tv">Battery Server</string>
+    <string name="chat_folders_tv">Chat Folders</string>
+    <string name="language_tv">Language</string>
+    <string name="help_tv">Help</string>
+    <string name="privacy_policy_tv">Privacy Policy</string>
+    <string name="popular_questions_tv">Popular Questions</string>
+    <string name="ask_a_question_tv">Ask a Question</string>
 </resources>
